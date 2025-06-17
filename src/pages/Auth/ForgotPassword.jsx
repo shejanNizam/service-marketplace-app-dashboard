@@ -41,10 +41,6 @@ const ForgotPassword = () => {
   return (
     <div className="min-h-[92vh] w-full grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-1 lg:gap-8">
       {/* Image Section */}
-      {/* <div className="border-r-0 lg:border-r-2 border-gray w-[100%] p-[8%] lg:p-[12%] lg:pr-0">
-        <img src={image} alt="Forgot Password Illustration" />
-      </div> */}
-
       <div className="lg:border-r-2 border-gray mx-auto w-[100%]  lg:p-[25%] lg:pr-[25%]">
         {/* <img src={logo_image} alt="App Logo" /> */}
         <div className=" flex justify-center items-center text-primary text-3xl font-bold">

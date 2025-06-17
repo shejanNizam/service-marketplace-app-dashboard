@@ -10,6 +10,8 @@ import AllApplicants from "../pages/Main/AllJobs/AllApplicants";
 import AllApplicantsDetails from "../pages/Main/AllJobs/AllApplicantsDetails";
 import AllJobs from "../pages/Main/AllJobs/AllJobs";
 import JobDetails from "../pages/Main/AllJobs/JobDetails";
+import Professional from "../pages/Main/AllUsers/Professional";
+import Users from "../pages/Main/AllUsers/Users";
 import AddBlog from "../pages/Main/Blogs/AddBlog";
 import BlogDetails from "../pages/Main/Blogs/BlogDetails";
 import Blogs from "../pages/Main/Blogs/Blogs";
@@ -29,6 +31,7 @@ import EditPrivacyPolicy from "../pages/Settings/EditPrivacyPolicy";
 import EditTermsConditions from "../pages/Settings/EditTermsConditions";
 import PrivacyPolicy from "../pages/Settings/PrivacyPolicy";
 import TermsConditions from "../pages/Settings/TermsConditions";
+import Category from "../pages/Main/Category/Category";
 
 export const dashboardItems = [
   {
@@ -42,12 +45,32 @@ export const dashboardItems = [
     element: <Notifications />,
   },
 
-  // {
-  //   name: "Available Session",
-  //   path: "available-session",
-  //   icon: FaBasketballBall,
-  //   element: <TabbedView />,
-  // },
+  {
+    name: "All User's",
+    rootPath: "all-users",
+    icon: PiUsersThree,
+    children: [
+      {
+        name: "Users",
+        path: "all-users/users",
+        icon: CiUser,
+        element: <Users />,
+      },
+
+      {
+        name: "Professional",
+        icon: CiUser,
+        path: "all-users/professional",
+        element: <Professional />,
+      },
+    ],
+  },
+  {
+    name: "Category",
+    path: "category",
+    icon: PiUsersThree,
+    element: <Category />,
+  },
   {
     name: "International",
     path: "international",

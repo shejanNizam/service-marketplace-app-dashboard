@@ -8,7 +8,7 @@ import {
 } from "../../../redux/features/banner/bannerApi";
 import { ErrorSwal, SuccessSwal } from "../../../utils/allSwalFire";
 
-const Ad = () => {
+const Category = () => {
   const [page, setPage] = useState(1);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isEditMode, setIsEditMode] = useState(false);

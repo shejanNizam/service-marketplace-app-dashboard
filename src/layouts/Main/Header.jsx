@@ -2,6 +2,7 @@ import { Avatar } from "antd";
 import { useNavigate } from "react-router-dom";
 import profileImage from "../../assets/images/dash-profile.png";
 
+import { IoIosNotificationsOutline } from "react-icons/io";
 import { useSelector } from "react-redux";
 
 // const socket = io(`${import.meta.env.VITE_IMAGE_URL}`);
@@ -20,8 +21,14 @@ const Header = () => {
         </p>
         <p className="text-gray-50">{"Have a nice day!"}</p>
       </div>
-      <div className="flex gap-x-6">
-        <></>
+      <div className="flex justify-center items-center gap-x-6">
+        <>
+          <IoIosNotificationsOutline
+            onClick={() => navigate("/notifications")}
+            style={{ cursor: "pointer" }}
+            className={`border border-white min-w-[40px] min-h-[40px] rounded-lg p-1.5 shadow-sm text-white group-hover:bg-[#b3dfc7]`}
+          />
+        </>
         <div
           onClick={(e) => navigate("/settings/profile")}
           className="flex items-center gap-2 cursor-pointer"
