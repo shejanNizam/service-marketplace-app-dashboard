@@ -2,7 +2,7 @@ import { Button, Checkbox, Input } from "antd";
 import Form from "antd/es/form/Form";
 import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
-import main_logo from "../../assets/images/healthcare_main_logo.svg";
+import main_logo from "../../assets/images/service_marketplace_main_logo_red.svg";
 import { useLoginMutation } from "../../redux/features/auth/authApi";
 import { setLogin } from "../../redux/slices/authSlice";
 import { ErrorSwal, SuccessSwal } from "../../utils/allSwalFire";
@@ -43,23 +43,21 @@ const SignIn = () => {
   };
 
   return (
-    <div className="min-h-[92vh] w-full grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-1 lg:gap-8 bg-white">
+    <div className="min-h-[92vh] w-full grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-1 lg:gap-8">
       {/* Logo Section */}
-      <div className="lg:border-r-2 border-gray mx-auto w-[70%]  lg:p-[25%] lg:pr-[25%]">
+      <div className="lg:border-r-2 border-gray mx-auto w-[100%]  lg:p-[25%] lg:pr-[25%]">
         {/* <img src={logo_image} alt="App Logo" /> */}
         <div className=" flex justify-center items-center text-primary text-3xl font-bold">
-          <img className="w-[90%] mx-auto" src={main_logo} alt="Logo" />
+          <img className="w-[100%] mx-auto" src={main_logo} alt="Logo" />
         </div>
       </div>
 
       {/* Login Form Section */}
-      <div className="lg:p-[5%] order-first lg:order-last">
-        <div className="w-full py-[44px] lg:px-[44px]">
+      <div className="lg:p-[2%] order-first lg:order-last">
+        <div className="w-full py-[44px] lg:px-[44px] border border-gray-2 rounded-xl shadow-2xl">
           {/* Heading */}
           <div className="pb-[30px] space-y-2">
-            <h1 className="text-[33px] text-center font-semibold">
-              Login to Account!
-            </h1>
+            <h1 className="text-[33px] text-center font-semibold">Sign In</h1>
             <p className="text-primary text-center lg:text-lg">
               Please enter your email and password to continue!
             </p>
@@ -129,13 +127,13 @@ const SignIn = () => {
                 </Checkbox>
               </Form.Item>
               <Form.Item>
-                <Button
+                <button
                   onClick={() => navigate("/auth/forgot-password")}
                   type="link"
                   className="text-base font-medium text-primary"
                 >
-                  Forget password?
-                </Button>
+                  Forgot password?
+                </button>
               </Form.Item>
             </div>
 

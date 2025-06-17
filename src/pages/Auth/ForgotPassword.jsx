@@ -1,7 +1,7 @@
 import { Button, Input } from "antd";
 import Form from "antd/es/form/Form";
 import { useNavigate } from "react-router-dom";
-import image from "../../assets/images/forgot.png";
+import main_logo from "../../assets/images/service_marketplace_main_logo_red.svg";
 import PageHeading from "../../Components/PageHeading";
 import { useForgotPasswordMutation } from "../../redux/features/auth/authApi";
 import { ErrorSwal, SuccessSwal } from "../../utils/allSwalFire";
@@ -39,23 +39,30 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="min-h-[92vh] w-full grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-1 lg:gap-8 bg-white">
+    <div className="min-h-[92vh] w-full grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-1 lg:gap-8">
       {/* Image Section */}
-      <div className="border-r-0 lg:border-r-2 border-gray w-[99%] p-[8%] lg:p-[12%] lg:pr-0">
+      {/* <div className="border-r-0 lg:border-r-2 border-gray w-[100%] p-[8%] lg:p-[12%] lg:pr-0">
         <img src={image} alt="Forgot Password Illustration" />
+      </div> */}
+
+      <div className="lg:border-r-2 border-gray mx-auto w-[100%]  lg:p-[25%] lg:pr-[25%]">
+        {/* <img src={logo_image} alt="App Logo" /> */}
+        <div className=" flex justify-center items-center text-primary text-3xl font-bold">
+          <img className="w-[100%] mx-auto" src={main_logo} alt="Logo" />
+        </div>
       </div>
 
       {/* Form Section */}
-      <div className="lg:p-[5%] order-first lg:order-last">
-        <div className="w-full py-[64px] lg:px-[44px] space-y-8">
+      <div className="lg:p-[2%] order-first lg:order-last">
+        <div className="w-full py-[64px] lg:px-[44px] space-y-8 border border-gray-2 rounded-xl shadow-2xl">
           {/* Page Heading */}
           <div className="flex flex-col items-center lg:items-start">
             <PageHeading
               backPath={"/auth"}
               title={"Forget Password"}
-              disbaledBackBtn={true}
+              disbaledBackBtn={false}
             />
-            <p className="drop-shadow text-[#646464] mt-4 text-center lg:text-start">
+            <p className="drop-shadow text-primary mt-4 text-center lg:text-start">
               Enter your email address to get a verification code for resetting
               your password.
             </p>

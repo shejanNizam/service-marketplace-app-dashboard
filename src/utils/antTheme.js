@@ -21,12 +21,12 @@ export const mainTheme = {
     Input: {
       controlHeightLG: 57,
       borderRadiusLG: 16,
-      colorBorder: "#1077BC",
+      colorBorder: "#8E0003",
       colorBorderLG: "#1077BC",
     },
     DatePicker: {
-      colorBorder: "#1077BC",
-      colorTextPlaceholder: "#1077BC", // Updated to use a consistent color
+      colorBorder: "#8E0003",
+      colorTextPlaceholder: "#8E0003",
     },
     Select: {
       controlHeightLG: 56,
