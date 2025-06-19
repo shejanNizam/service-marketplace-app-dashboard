@@ -1,7 +1,10 @@
 import { Skeleton } from "antd";
+import { FaHospitalUser, FaUsers } from "react-icons/fa";
+import { GrMoney } from "react-icons/gr";
+import { RiVerifiedBadgeFill } from "react-icons/ri";
 import LoaderWraperComp from "../../../Components/LoaderWraperComp";
 import { useGetAllStatsQuery } from "../../../redux/features/dashboardHome/dashboardHomeApi";
-import International from "../International/International";
+import Professional from "../AllUsers/Professional";
 import DashboardChart from "./DashboardChart";
 
 export default function DashboardHome() {
@@ -21,67 +24,52 @@ export default function DashboardHome() {
             </div>
           }
           className={"h-[12.02vh]"}
-        >
-          <div className="flex justify-around bg-secondary h-36 rounded-lg drop-shadow-xl">
-            <div className="flex justify-center items-center gap-16 ">
-              <div>
-                <p className="text-[#5E5E5E] font-semibold xl:text-4xl">
-                  Total Jobs
-                </p>
-                <p className="text-3xl xl:text-4xl text-primary font-bold">
-                  {data?.data?.totalJobs || "N/A"}
-                  {/* {"187"} */}
-                </p>
+        ></LoaderWraperComp>
+
+        <div className="flex w-full">
+          <div className="w-3/5">
+            <DashboardChart />
+          </div>
+          <div className="flex justify-around h-36 rounded-lg drop-shadow-xl w-2/5">
+            <div className="grid grid-cols-2 gap-4 ">
+              <div className="text-white bg-gradient-to-t from-[#4D0304] to-[#8E0003] rounded-lg px-4 flex justify-around items-center gap-4 w-[250px] h-[150px]">
+                {/* <p>logo</p> */}
+                <GrMoney size={40} />
+                <div>
+                  <p className="text-xl font-semibold">Total Earning</p>
+                  <p className="text-3xl font-bold">{`$254.99`}</p>
+                </div>
               </div>
-              {/* <FaUsers
-                className={`text-primary w-12 h-12 lg:w-16 lg:h-16`}
-                aria-label="Total Users"
-              /> */}
-            </div>
-            <div className="border-4 border-primary my-4 rounded"></div>
-            <div className="flex justify-center items-center gap-16 ">
-              <div>
-                <p className="text-[#5E5E5E] font-semibold  xl:text-4xl">
-                  International Application
-                </p>
-                <p className="text-3xl xl:text-4xl text-primary font-bold">
-                  {data?.data?.totalApply || "N/A"}
-                  {/* {"78"} */}
-                </p>
+              <div className="text-white bg-gradient-to-t from-[#0C3D00] to-[#21A300] rounded-lg px-4 flex justify-around items-center gap-4 w-[250px] h-[150px]">
+                <RiVerifiedBadgeFill size={40} />
+                <div>
+                  <p className="text-xl font-semibold">Verified A.C</p>
+                  <p className="text-3xl font-bold">{`112`}</p>
+                </div>
               </div>
-              {/* <FaBasketball
-                className={`text-primary w-12 h-12 lg:w-16 lg:h-16`}
-                aria-label="Total Users"
-              /> */}
-            </div>
-            <div className="border-4 border-primary my-4 rounded"></div>
-            <div className="flex justify-center items-center gap-16 ">
-              <div>
-                <p className="text-[#5E5E5E] font-semibold  xl:text-4xl">
-                  Contacts
-                </p>
-                <p className="text-3xl xl:text-4xl text-primary font-bold">
-                  {data?.data?.totalContact || "N/A"}
-                  {/* {"87"} */}
-                </p>
+              <div className="text-white bg-gradient-to-t from-[#996300] to-[#FFA500] rounded-lg px-4 flex justify-around items-center gap-4 w-[250px] h-[150px]">
+                <FaHospitalUser size={40} />
+                <div>
+                  <p className="text-xl font-semibold">Total Profession</p>
+                  <p className="text-3xl font-bold">{`254`}</p>
+                </div>
               </div>
-              {/* <GrMoney
-                className={`text-primary w-12 h-12 lg:w-16 lg:h-16`}
-                aria-label="Total Users"
-              /> */}
+              <div className="text-white bg-gradient-to-t from-[#771212] to-[#DD2222] rounded-lg px-4 flex justify-around items-center gap-4 w-[250px] h-[150px]">
+                <FaUsers size={40} />
+                <div>
+                  <p className="text-xl font-semibold">Total Client</p>
+                  <p className="text-3xl font-bold">1250</p>
+                </div>
+              </div>
             </div>
           </div>
-        </LoaderWraperComp>
-
-        <div>
-          <DashboardChart />
         </div>
-        {/* <div>
+        <div>
           <h3 className="text-primary text-3xl font-bold mb-2">
-            Recent International Applications
+            Recent Professionals
           </h3>
-          <International />
-        </div> */}
+          <Professional />
+        </div>
       </div>
     </>
   );
