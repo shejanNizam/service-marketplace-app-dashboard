@@ -1,28 +1,20 @@
 import { CiSettings, CiUser } from "react-icons/ci";
-import { FaBasketballBall } from "react-icons/fa";
 import { FaServicestack } from "react-icons/fa6";
 import { MdOutlineSecurityUpdateWarning } from "react-icons/md";
 import { PiUsersThree } from "react-icons/pi";
 import { RiDashboardHorizontalFill } from "react-icons/ri";
 import { TbAirConditioning } from "react-icons/tb";
-import TabbedView from "../pages/Main/AddValue/TabbedView";
-import AllApplicants from "../pages/Main/AllJobs/AllApplicants";
-import AllApplicantsDetails from "../pages/Main/AllJobs/AllApplicantsDetails";
-import AllJobs from "../pages/Main/AllJobs/AllJobs";
-import JobDetails from "../pages/Main/AllJobs/JobDetails";
+import AccountVarification from "../pages/Main/AccountVarification/AccountVarification";
 import Professional from "../pages/Main/AllUsers/Professional";
 import Users from "../pages/Main/AllUsers/Users";
-import AddBlog from "../pages/Main/Blogs/AddBlog";
-import BlogDetails from "../pages/Main/Blogs/BlogDetails";
-import Blogs from "../pages/Main/Blogs/Blogs";
+import CategoryNew from "../pages/Main/Category/CategoryNew";
 import ContactList from "../pages/Main/ContactList/ContactList";
 import ContactListDetails from "../pages/Main/ContactList/ContactListDetails";
 import DashboardHome from "../pages/Main/DashboardHome/DashboardHome";
-import International from "../pages/Main/International/International";
-import InternationalApplicantDetails from "../pages/Main/International/InternationalApplicantDetails";
-import JobPost from "../pages/Main/JobPost/JobPost";
-import JobPostPreview from "../pages/Main/JobPost/JobPostPreview";
+import EarningNew from "../pages/Main/Earnings/EarningNew";
 import Notifications from "../pages/Main/Notifications/Notifications";
+import Subscription from "../pages/Main/Subscription/Subscription";
+import Support from "../pages/Main/Support/Support";
 import EditMyProfile from "../pages/Profile/EditMyProfile";
 import MyProfile from "../pages/Profile/MyProfile";
 import About from "../pages/Settings/About";
@@ -31,7 +23,6 @@ import EditPrivacyPolicy from "../pages/Settings/EditPrivacyPolicy";
 import EditTermsConditions from "../pages/Settings/EditTermsConditions";
 import PrivacyPolicy from "../pages/Settings/PrivacyPolicy";
 import TermsConditions from "../pages/Settings/TermsConditions";
-import Category from "../pages/Main/Category/Category";
 
 export const dashboardItems = [
   {
@@ -66,76 +57,35 @@ export const dashboardItems = [
     ],
   },
   {
+    name: "A.C Varification",
+    path: "account-varification",
+    icon: PiUsersThree,
+    element: <AccountVarification />,
+  },
+  {
     name: "Category",
     path: "category",
     icon: PiUsersThree,
-    element: <Category />,
+    element: <CategoryNew />,
   },
+
   {
-    name: "International",
-    path: "international",
+    name: "Earning",
+    path: "earning",
     icon: PiUsersThree,
-    element: <International />,
+    element: <EarningNew />,
   },
   {
-    path: "international/:id",
-    element: <InternationalApplicantDetails />,
-  },
-  {
-    name: "All Jobs",
-    path: "all-jobs",
+    name: "Subscription",
+    path: "subscription",
     icon: PiUsersThree,
-    element: <AllJobs />,
+    element: <Subscription />,
   },
   {
-    path: "all-jobs/:id",
-    element: <JobDetails />,
-  },
-  {
-    path: "all-jobs/all-applicants/:id",
-    element: <AllApplicants />,
-  },
-  {
-    path: "all-jobs/all-applicants/details/:id",
-    element: <AllApplicantsDetails />,
-  },
-  {
-    // name: "Job Post",
-    path: "job-post",
-    // icon: PiUsersThree,
-    element: <JobPost />,
-  },
-  {
-    path: "edit-job-post/:id",
-    element: <JobPost />,
-  },
-  {
-    path: "job-post/preview",
-    element: <JobPostPreview />,
-  },
-  {
-    name: "Add value",
-    path: "add-value",
-    icon: FaBasketballBall,
-    element: <TabbedView />,
-  },
-  {
-    name: "Blogs",
-    path: "blogs",
+    name: "Support",
+    path: "support",
     icon: PiUsersThree,
-    element: <Blogs />,
-  },
-  {
-    path: "blogs/:id",
-    element: <BlogDetails />,
-  },
-  {
-    path: "add-blog",
-    element: <AddBlog />,
-  },
-  {
-    path: "edit-blog/:id",
-    element: <AddBlog />,
+    element: <Support />,
   },
   {
     name: "Contact List",
