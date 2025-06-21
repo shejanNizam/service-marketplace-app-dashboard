@@ -1,20 +1,15 @@
-// export default function Users() {
-//   return (
-//     <>
-//       <h3>Users</h3>
-//     </>
-//   );
-// }
-
 import { Button, DatePicker, Modal, Table } from "antd";
 import { useState } from "react";
+import { BsInfoCircleFill } from "react-icons/bs";
 import { IoSearch } from "react-icons/io5";
+import { RiDeleteBin6Fill } from "react-icons/ri";
 
 export default function Users() {
   const [page, setPage] = useState(1);
   const [date, setDate] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedClient, setSelectedClient] = useState(null);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
   const data = [
     {
@@ -78,6 +73,18 @@ export default function Users() {
     setPage(1);
   };
 
+  const showDeleteModal = (record) => {
+    setSelectedClient(record);
+    setIsDeleteModalOpen(true);
+  };
+
+  const handleDelete = () => {
+    // Here you would typically make an API call to delete the client
+    console.log("Deleting client:", selectedClient);
+    setIsDeleteModalOpen(false);
+    // You would then update your data state to remove the deleted client
+  };
+
   const showModal = (record) => {
     setSelectedClient(record);
     setIsModalOpen(true);
@@ -91,9 +98,13 @@ export default function Users() {
     setIsModalOpen(false);
   };
 
+  const handleDeleteCancel = () => {
+    setIsDeleteModalOpen(false);
+  };
+
   const columns = [
     {
-      title: "Client id",
+      title: "Client Id",
       dataIndex: "key",
       key: "id",
     },
@@ -121,9 +132,14 @@ export default function Users() {
       title: "Action",
       key: "action",
       render: (_, record) => (
-        <Button type="primary" onClick={() => showModal(record)} className="">
-          V
-        </Button>
+        <div className="flex gap-4">
+          <button onClick={() => showDeleteModal(record)} className="">
+            <RiDeleteBin6Fill size={20} />
+          </button>
+          <button onClick={() => showModal(record)} className="">
+            <BsInfoCircleFill size={20} />
+          </button>
+        </div>
       ),
     },
   ];
@@ -156,43 +172,85 @@ export default function Users() {
       />
 
       <Modal
-        title="Client Info"
+        title={
+          <span className="text-xl text-primary font-bold"> Client Info </span>
+        }
         open={isModalOpen}
         onOk={handleOk}
         onCancel={handleCancel}
+        centered
         footer={[
-          <Button
-            key="ok"
-            type="primary"
-            onClick={handleOk}
-            className="bg-blue-500"
-          >
-            OK
-          </Button>,
+          <div className="flex justify-center">
+            <button
+              key="ok"
+              type="primary"
+              onClick={handleOk}
+              className="bg-primary text-white rounded-full  px-20 py-2 mt-4"
+            >
+              OK
+            </button>
+          </div>,
         ]}
       >
         {selectedClient && (
           <div className="space-y-4 mt-4">
-            <div>
+            <div className=" flex justify-between items-center border-b-2 px-2 ">
               <p className="font-semibold">Client Name</p>
               <p>{selectedClient.name}</p>
             </div>
-            <div>
+            <div className=" flex justify-between items-center border-b-2 px-2 ">
               <p className="font-semibold">Client Email</p>
               <p>{selectedClient.email}</p>
             </div>
-            <div>
+            <div className=" flex justify-between items-center border-b-2 px-2 ">
               <p className="font-semibold">Client Address</p>
               <p>{selectedClient.address}</p>
             </div>
-            <div>
+            <div className=" flex justify-between items-center border-b-2 px-2 ">
               <p className="font-semibold">Phone Number</p>
               <p>{selectedClient.phone}</p>
             </div>
-            <div>
+            <div className=" flex justify-between items-center border-b-2 px-2 ">
               <p className="font-semibold">Date</p>
               <p>{selectedClient.date}</p>
             </div>
+          </div>
+        )}
+      </Modal>
+
+      {/* Delete Confirmation Modal */}
+      <Modal
+        open={isDeleteModalOpen}
+        onCancel={handleDeleteCancel}
+        centered
+        footer={[
+          <div className="flex justify-center gap-4">
+            <button
+              key="cancel"
+              onClick={handleDeleteCancel}
+              className="border border-gray-300 rounded-full px-8 py-2 mt-4 hover:bg-gray-100"
+            >
+              Cancel
+            </button>
+            <button
+              key="delete"
+              onClick={handleDelete}
+              className="bg-red-600 text-white rounded-full px-8 py-2 mt-4 hover:bg-red-700"
+            >
+              Delete
+            </button>
+          </div>,
+        ]}
+      >
+        {selectedClient && (
+          <div className="space-y-4 mt-4 text-center">
+            <p className="text-lg">
+              Are you sure you want to delete{" "}
+              <span className="font-semibold">{selectedClient.name}</span>?
+            </p>
+            <p className="text-red-600 font-bold">
+              This action cannot be undone.
+            </p>
           </div>
         )}
       </Modal>
