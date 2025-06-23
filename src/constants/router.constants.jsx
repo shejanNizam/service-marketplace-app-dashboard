@@ -6,6 +6,7 @@ import { RiDashboardHorizontalFill } from "react-icons/ri";
 import { TbAirConditioning } from "react-icons/tb";
 import AccountVarification from "../pages/Main/AccountVarification/AccountVarification";
 import Professional from "../pages/Main/AllUsers/Professional";
+import ProfessionalDetails from "../pages/Main/AllUsers/ProfessionalDetails";
 import Users from "../pages/Main/AllUsers/Users";
 import CategoryNew from "../pages/Main/Category/CategoryNew";
 import ContactList from "../pages/Main/ContactList/ContactList";
@@ -53,6 +54,11 @@ export const dashboardItems = [
         icon: CiUser,
         path: "all-users/professional",
         element: <Professional />,
+      },
+
+      {
+        path: "all-users/professional/:id",
+        element: <ProfessionalDetails />,
       },
     ],
   },
