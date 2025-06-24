@@ -209,7 +209,7 @@ export default function ProfessionalDetails() {
               </p>
               <p className="flex items-center gap-4">
                 <>
-                  <MdEmail className="text-primary" size={20} />
+                  <MdEmail className="text-primary" size={24} />
                 </>
                 <p>
                   <p className="text-gray-400">Email Address</p>
