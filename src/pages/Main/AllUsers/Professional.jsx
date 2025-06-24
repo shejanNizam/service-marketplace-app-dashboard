@@ -136,7 +136,10 @@ export default function Professional() {
           <button onClick={() => showDeleteModal(record)} className="">
             <RiDeleteBin6Fill size={20} />
           </button>
-          <button onClick={() => navigate(`${record.key}`)} className="">
+          <button
+            onClick={() => navigate(`/all-users/professional/${record.key}`)}
+            className=""
+          >
             <BsInfoCircleFill size={20} />
           </button>
         </div>
