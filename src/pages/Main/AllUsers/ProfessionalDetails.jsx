@@ -62,7 +62,9 @@ export default function ProfessionalDetails() {
       <div className="flex justify-center items-center gap-12 px-12 py-4">
         <div className="flex-1">
           <div>
-            <h3 className="text-lg font-semibold ">Description</h3>
+            <h3 className="text-xl font-bold text-gray-900 pb-4">
+              Description
+            </h3>
             <p>
               {" "}
               Fusce et erat at nibh maximus fermentum. Mauris ac justo nibh.
@@ -73,17 +75,15 @@ export default function ProfessionalDetails() {
               velit.{" "}
             </p>
           </div>
-          {/* Company  */}
+          {/* Company Information */}
           <div className="border p-4 rounded-lg shadow-md my-4">
-            <div className="flex items-center mb-4">
-              <div className="text-xl font-bold text-gray-900">
-                Company Information
-              </div>
-            </div>
+            <p className="text-xl font-bold text-gray-900 pb-4">
+              Company Information
+            </p>
 
             <div className="flex justify-center items-start">
               <div className="flex-1 space-y-4">
-                <div className="flex items-center gap-4">
+                <p className="flex items-center gap-4">
                   <>
                     <PiCompassRoseBold className="text-primary" size={20} />
                   </>
@@ -91,8 +91,8 @@ export default function ProfessionalDetails() {
                     <p className="text-gray-400">Company Name</p>
                     <p>{"abcd"}</p>
                   </p>
-                </div>
-                <div className="flex items-center gap-4">
+                </p>
+                <p className="flex items-center gap-4">
                   <>
                     <MdEmail className="text-primary" size={20} />
                   </>
@@ -100,8 +100,8 @@ export default function ProfessionalDetails() {
                     <p className="text-gray-400">Email Address</p>
                     <p>{"esther.howard@gmail.com"}</p>
                   </p>
-                </div>
-                <div className="flex items-center gap-4">
+                </p>
+                <p className="flex items-center gap-4">
                   <>
                     <SiRedcandlegames className="text-primary" size={20} />
                   </>
@@ -109,10 +109,10 @@ export default function ProfessionalDetails() {
                     <p className="text-gray-400">Siret Number</p>
                     <p>{"123456"}</p>
                   </p>
-                </div>
+                </p>
               </div>
               <div className="flex-1 space-y-4">
-                <div className="flex items-center gap-4">
+                <p className="flex items-center gap-4">
                   <>
                     <FaLocationDot className="text-primary" size={20} />
                   </>
@@ -120,8 +120,8 @@ export default function ProfessionalDetails() {
                     <p className="text-gray-400">location</p>
                     <p>{"Beverly Hills, California 90202"}</p>
                   </p>
-                </div>
-                <div className="flex items-center gap-4">
+                </p>
+                <p className="flex items-center gap-4">
                   <>
                     <FaFilePdf className="text-primary" size={20} />
                   </>
@@ -134,11 +134,46 @@ export default function ProfessionalDetails() {
                       <FaDownload className="text-primary" size={20} />
                     </button>
                   </>
-                </div>
+                </p>
               </div>
             </div>
           </div>
-          <div>1</div>
+          {/* Projrcts & Certificates */}
+          <div className="border p-4 rounded-lg shadow-md my-4">
+            <p className="text-xl font-bold text-gray-900 pb-4">Projects</p>
+
+            <div className="flex justify-center items-start">
+              <div className="flex-1">
+                <p className="underline cursor-pointer text-primary font-semibold">
+                  project.jpg
+                </p>
+                <p className="underline cursor-pointer text-primary font-semibold">
+                  project.jpg
+                </p>
+              </div>
+              <div className="flex-1">
+                <p className="underline cursor-pointer text-primary font-semibold">
+                  project.jpg
+                </p>
+                <p className="underline cursor-pointer text-primary font-semibold">
+                  project.jpg
+                </p>
+              </div>
+            </div>
+            <p className="text-xl font-bold text-gray-900 py-4">Certificates</p>
+            <div className="flex justify-center items-start">
+              <div className="flex-1">
+                <p className="underline cursor-pointer text-primary font-semibold">
+                  Certificate.jpg
+                </p>
+              </div>
+              <div className="flex-1">
+                <p className="underline cursor-pointer text-primary font-semibold">
+                  Certificate.jpg
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
         {/* right side */}
         <div className="flex-1">
