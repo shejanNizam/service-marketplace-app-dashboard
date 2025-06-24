@@ -1,6 +1,7 @@
 import { Button, DatePicker, Modal, Table } from "antd";
 import { useState } from "react";
 import { BsInfoCircleFill } from "react-icons/bs";
+import { FaUserCog } from "react-icons/fa";
 import { IoSearch } from "react-icons/io5";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
@@ -145,6 +146,16 @@ export default function Professional() {
 
   return (
     <div className="container mx-auto p-4">
+      <div className="border rounded flex justify-start items-center gap-4 p-4">
+        <div className="bg-primary p-4 rounded text-white">
+          <FaUserCog size={32} />
+        </div>
+        <div>
+          <p className=" text-2xl font-semibold "> Total Professional </p>
+          <p className="text-3xl text-primary font-bold">{"120"}</p>
+        </div>
+      </div>
+      {/* below content */}
       <div className="flex justify-between items-center p-4">
         <h3 className="text-2xl text-primary font-semibold">
           Professional’s List

@@ -1,6 +1,7 @@
 import { Button, DatePicker, Modal, Table } from "antd";
 import { useState } from "react";
 import { BsInfoCircleFill } from "react-icons/bs";
+import { FaUserFriends } from "react-icons/fa";
 import { IoSearch } from "react-icons/io5";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 
@@ -146,8 +147,18 @@ export default function Users() {
 
   return (
     <div className="container mx-auto p-4">
+      <div className="border rounded flex justify-start items-center gap-4 p-4">
+        <div className="bg-primary p-4 rounded text-white">
+          <FaUserFriends size={32} />
+        </div>
+        <div>
+          <p className=" text-2xl font-semibold "> Total Users </p>
+          <p className="text-3xl text-primary font-bold">{"120"}</p>
+        </div>
+      </div>
+      {/* below con tent */}
       <div className="flex justify-between items-center p-4">
-        <h3 className="text-2xl text-primary font-semibold">Client List</h3>
+        <h3 className="text-2xl text-primary font-semibold">User's List</h3>
         <div className="flex justify-around gap-4">
           <DatePicker
             placeholder="Select Date"

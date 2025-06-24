@@ -68,7 +68,8 @@ export default function DashboardHome() {
           <h3 className="text-primary text-3xl font-bold mb-2">
             Recent Professionals
           </h3>
-          <Professional />
+          <p>add later</p>
+          {/* <Professional /> */}
         </div>
       </div>
     </>
