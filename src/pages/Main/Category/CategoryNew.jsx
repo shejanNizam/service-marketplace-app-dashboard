@@ -1,7 +1,8 @@
 import { UploadOutlined } from "@ant-design/icons";
 import { Button, Input, Modal, Table, Upload } from "antd";
 import { useState } from "react";
-import { FaEdit, FaTrash } from "react-icons/fa";
+import { FaEdit } from "react-icons/fa";
+import { RiDeleteBin6Fill } from "react-icons/ri";
 import { ErrorSwal, SuccessSwal } from "../../../utils/allSwalFire";
 
 const CategoryNew = () => {
@@ -161,7 +162,7 @@ const CategoryNew = () => {
             onClick={() => handleOpenModalForEdit(record)}
           />
           <Button
-            icon={<FaTrash />} // Delete icon
+            icon={<RiDeleteBin6Fill size={20} />} // Delete icon
             type="danger"
             shape="round"
             onClick={() => handleOpenDeleteModal(record)}
@@ -179,7 +180,7 @@ const CategoryNew = () => {
           Add Category
         </Button>
       </div>
-      <div>
+      <div className="w-[70%]">
         <Table
           columns={columns}
           dataSource={data.data}
@@ -241,25 +242,43 @@ const CategoryNew = () => {
 
       {/* Delete Confirmation Modal */}
       <Modal
-        title="Delete Category"
-        visible={isDeleteModalVisible}
+        title={
+          <span className="text-primary text-xl font-semibold">
+            Delete Category
+          </span>
+        }
+        open={isDeleteModalVisible}
         onCancel={() => setIsDeleteModalVisible(false)}
         footer={[
-          <Button key="cancel" onClick={() => setIsDeleteModalVisible(false)}>
-            Cancel
-          </Button>,
-          <Button
-            key="delete"
-            type="danger"
-            onClick={() => handleDeleteCategory(categoryId)}
-          >
-            Delete
-          </Button>,
+          <div className="flex justify-center gap-4">
+            <button
+              key="cancel"
+              onClick={() => setIsDeleteModalVisible(false)}
+              className="border border-gray-300 rounded-full px-8 py-2 mt-4 hover:bg-gray-100"
+            >
+              Cancel
+            </button>
+            <button
+              key="delete"
+              onClick={() => handleDeleteCategory(categoryId)}
+              className="bg-red-600 text-white rounded-full px-8 py-2 mt-4 hover:bg-red-700"
+            >
+              Delete
+            </button>
+          </div>,
         ]}
         centered
         width={400}
       >
-        <p>Are you sure you want to delete this category?</p>
+        <div className="space-y-4 mt-4 text-center">
+          <p className="text-lg">
+            Are you sure you want to delete{" "}
+            {/* <span className="font-semibold">{selectedClient.name}</span>? */}
+          </p>
+          <p className="text-red-600 font-bold">
+            This action cannot be undone.
+          </p>
+        </div>
       </Modal>
     </>
   );
