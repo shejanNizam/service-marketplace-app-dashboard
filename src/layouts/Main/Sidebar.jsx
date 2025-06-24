@@ -24,7 +24,7 @@ const SubMenu = ({ children, isOpen, rootPath, location, openName, name }) => (
         className={({ isActive }) =>
           isActive
             ? "bg-white text-primary w-full px-4 py-1 flex items-center justify-start gap-3 transition-all rounded-lg"
-            : "text-black hover:text-primary hover:bg-white w-full px-4 py-1 flex items-center justify-start gap-3 transition-all rounded-lg"
+            : "text-white hover:text-primary hover:bg-white w-full px-4 py-1 flex items-center justify-start gap-3 transition-all rounded-lg"
         }
       >
         <div>{createElement(subIcon, { size: "17" })}</div>

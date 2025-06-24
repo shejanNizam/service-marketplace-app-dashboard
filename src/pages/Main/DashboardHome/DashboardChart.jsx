@@ -100,7 +100,7 @@ const DashboardChart = () => {
           >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis
-              tick={{ stroke: "#464343", strokeWidth: 0.5, fill: "#8E0003" }}
+              tick={{ stroke: "#464343", strokeWidth: 0.5, fill: "#4D0304" }}
               dataKey="month"
             />
             <YAxis />
@@ -115,7 +115,7 @@ const DashboardChart = () => {
             <Bar
               dataKey="totalEarnings"
               name="Monthly Earnings"
-              fill="#8E0003"
+              fill="#4D0304"
               barSize={30}
               radius={[4, 4, 0, 0]} // Added slight radius for better visuals
             />

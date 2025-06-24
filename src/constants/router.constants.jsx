@@ -9,8 +9,6 @@ import Professional from "../pages/Main/AllUsers/Professional";
 import ProfessionalDetails from "../pages/Main/AllUsers/ProfessionalDetails";
 import Users from "../pages/Main/AllUsers/Users";
 import CategoryNew from "../pages/Main/Category/CategoryNew";
-import ContactList from "../pages/Main/ContactList/ContactList";
-import ContactListDetails from "../pages/Main/ContactList/ContactListDetails";
 import DashboardHome from "../pages/Main/DashboardHome/DashboardHome";
 import EarningNew from "../pages/Main/Earnings/EarningNew";
 import Notifications from "../pages/Main/Notifications/Notifications";
@@ -93,16 +91,7 @@ export const dashboardItems = [
     icon: PiUsersThree,
     element: <Support />,
   },
-  {
-    name: "Contact List",
-    path: "contact-list",
-    icon: PiUsersThree,
-    element: <ContactList />,
-  },
-  {
-    path: "contact-list/:id",
-    element: <ContactListDetails />,
-  },
+
   {
     name: "Settings",
     rootPath: "settings",
