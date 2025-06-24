@@ -180,7 +180,7 @@ const CategoryNew = () => {
           Add Category
         </Button>
       </div>
-      <div className="w-[70%]">
+      <div>
         <Table
           columns={columns}
           dataSource={data.data}
