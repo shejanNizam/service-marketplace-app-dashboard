@@ -1,5 +1,12 @@
-import { FaChevronLeft } from "react-icons/fa6";
-import { MdVerified } from "react-icons/md";
+import {
+  FaChevronLeft,
+  FaDownload,
+  FaFilePdf,
+  FaLocationDot,
+} from "react-icons/fa6";
+import { MdEmail, MdVerified } from "react-icons/md";
+import { PiCompassRoseBold } from "react-icons/pi";
+import { SiRedcandlegames } from "react-icons/si";
 import { useNavigate } from "react-router-dom";
 import image from "../../../assets/images/host-details-image.png";
 
@@ -8,6 +15,10 @@ export default function ProfessionalDetails() {
 
   const isVerified = false;
   //   const isVerified = true;
+
+  const handleDownload = () => {
+    console.log("click the download button");
+  };
   return (
     <>
       <div className="flex justify-between items-center border rounded shadow-sm py-4">
@@ -71,8 +82,60 @@ export default function ProfessionalDetails() {
             </div>
 
             <div className="flex justify-center items-start">
-              <div className="flex-1">left</div>
-              <div className="flex-1">right</div>
+              <div className="flex-1 space-y-4">
+                <div className="flex items-center gap-4">
+                  <>
+                    <PiCompassRoseBold className="text-primary" size={20} />
+                  </>
+                  <p>
+                    <p className="text-gray-400">Company Name</p>
+                    <p>{"abcd"}</p>
+                  </p>
+                </div>
+                <div className="flex items-center gap-4">
+                  <>
+                    <MdEmail className="text-primary" size={20} />
+                  </>
+                  <p>
+                    <p className="text-gray-400">Email Address</p>
+                    <p>{"esther.howard@gmail.com"}</p>
+                  </p>
+                </div>
+                <div className="flex items-center gap-4">
+                  <>
+                    <SiRedcandlegames className="text-primary" size={20} />
+                  </>
+                  <p>
+                    <p className="text-gray-400">Siret Number</p>
+                    <p>{"123456"}</p>
+                  </p>
+                </div>
+              </div>
+              <div className="flex-1 space-y-4">
+                <div className="flex items-center gap-4">
+                  <>
+                    <FaLocationDot className="text-primary" size={20} />
+                  </>
+                  <p>
+                    <p className="text-gray-400">location</p>
+                    <p>{"Beverly Hills, California 90202"}</p>
+                  </p>
+                </div>
+                <div className="flex items-center gap-4">
+                  <>
+                    <FaFilePdf className="text-primary" size={20} />
+                  </>
+                  <p>
+                    <p className="text-gray-400">Esther Howard</p>
+                    <p>{"PDF"}</p>
+                  </p>
+                  <>
+                    <button onClick={handleDownload}>
+                      <FaDownload className="text-primary" size={20} />
+                    </button>
+                  </>
+                </div>
+              </div>
             </div>
           </div>
           <div>1</div>
