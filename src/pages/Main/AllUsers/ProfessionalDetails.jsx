@@ -1,8 +1,13 @@
+import { BsBrowserChrome } from "react-icons/bs";
+import { FaFacebookSquare } from "react-icons/fa";
 import {
   FaChevronLeft,
   FaDownload,
   FaFilePdf,
+  FaLinkedin,
   FaLocationDot,
+  FaPhone,
+  FaTwitter,
 } from "react-icons/fa6";
 import { MdEmail, MdVerified } from "react-icons/md";
 import { PiCompassRoseBold } from "react-icons/pi";
@@ -175,24 +180,65 @@ export default function ProfessionalDetails() {
             </div>
           </div>
         </div>
+
         {/* right side */}
         <div className="flex-1">
-          <div>
-            {" "}
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-            velit fugiat accusamus laboriosam voluptatum deserunt error tempore
-            necessitatibus dolor sunt nisi quidem molestias itaque reiciendis,
-            eius architecto rerum laudantium adipisci. Lorem ipsum dolor sit
-            amet consectetur adipisicing elit. Officia impedit aliquid ad,
-            numquam placeat inventore! Corporis, possimus ipsam. Nostrum natus
-            veritatis incidunt cupiditate recusandae eos obcaecati accusantium
-            praesentium nihil dolorum.{" "}
+          <div className="border p-4 rounded-lg shadow-md my-4">
+            <p className="text-xl font-bold text-gray-900 pb-4">
+              Contact Information
+            </p>
+
+            <div className="space-y-4">
+              <p className="flex items-center gap-4">
+                <>
+                  <BsBrowserChrome className="text-primary" size={20} />
+                </>
+                <p>
+                  <p className="text-gray-400">Website</p>
+                  <p>{"www.estherhoward.com"}</p>
+                </p>
+              </p>
+              <p className="flex items-center gap-4">
+                <>
+                  <FaPhone className="text-primary" size={20} />
+                </>
+                <p>
+                  <p className="text-gray-400">Phone Number</p>
+                  <p>{"+1-202-555-0141"}</p>
+                </p>
+              </p>
+              <p className="flex items-center gap-4">
+                <>
+                  <MdEmail className="text-primary" size={20} />
+                </>
+                <p>
+                  <p className="text-gray-400">Email Address</p>
+                  <p>{"esther.howard@gmail.com"}</p>
+                </p>
+              </p>
+            </div>
           </div>
-          <div>2</div>
-          <div>2</div>
+          <div className="border p-4 rounded-lg shadow-md my-4">
+            <p className="text-xl font-bold text-gray-900 pb-4">Service Area</p>
+            <div className="flex justify-start items-center text-wrap gap-4">
+              <p className="border border-primary rounded px-2">New York</p>
+              <p className="border border-primary rounded px-2">Paris</p>
+              <p className="border border-primary rounded px-2">USA</p>
+              <p className="border border-primary rounded px-2">New York</p>
+              <p className="border border-primary rounded px-2">Paris</p>
+              <p className="border border-primary rounded px-2">USA</p>
+            </div>
+          </div>
+          <div className="border p-4 rounded-lg shadow-md my-4">
+            <p className="text-xl font-bold text-gray-900 pb-4">Social Media</p>
+            <div className="flex justify-start items-center gap-4">
+              <FaFacebookSquare className="text-primary" size={32} />
+              <FaTwitter className="text-primary" size={32} />
+              <FaLinkedin className="text-primary" size={32} />
+            </div>
+          </div>
         </div>
       </div>
-      <h3>ProfessionalDetails</h3>
     </>
   );
 }
