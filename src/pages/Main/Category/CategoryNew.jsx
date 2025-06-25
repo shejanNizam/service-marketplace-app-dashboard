@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { ErrorSwal, SuccessSwal } from "../../../utils/allSwalFire";
+import imageS from "../../../assets/images/host-details-image.png";
 
 const CategoryNew = () => {
   const [page, setPage] = useState(1);
@@ -20,10 +21,10 @@ const CategoryNew = () => {
   // Mocked data instead of calling API
   const data = {
     data: [
-      { id: 1, name: "Category 1", image: "https://via.placeholder.com/150" },
-      { id: 2, name: "Category 2", image: "https://via.placeholder.com/150" },
-      { id: 3, name: "Category 3", image: "https://via.placeholder.com/150" },
-      { id: 4, name: "Category 4", image: "https://via.placeholder.com/150" },
+      { id: 1, name: "Category 1", image: imageS },
+      { id: 2, name: "Category 2", image: imageS },
+      { id: 3, name: "Category 3", image: imageS },
+      { id: 4, name: "Category 4", image: imageS },
     ],
     pagination: {
       totalData: 4,
@@ -143,7 +144,7 @@ const CategoryNew = () => {
       key: "image",
       render: (image) => (
         <img
-          src={image || "https://via.placeholder.com/150"}
+          src={image || image}
           alt="Category"
           style={{ width: 50, height: 50, objectFit: "cover" }}
         />
@@ -182,6 +183,7 @@ const CategoryNew = () => {
       </div>
       <div>
         <Table
+          className="w-[60%]"
           columns={columns}
           dataSource={data.data}
           rowKey={(record) => record.id}
@@ -198,7 +200,7 @@ const CategoryNew = () => {
       {/* Modal for Add/Edit Category */}
       <Modal
         title={isEditMode ? "Edit Category" : "Add Category"}
-        visible={isModalVisible}
+        open={isModalVisible}
         onCancel={() => setIsModalVisible(false)}
         footer={null}
         centered

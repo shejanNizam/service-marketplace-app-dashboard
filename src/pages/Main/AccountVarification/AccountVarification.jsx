@@ -75,13 +75,17 @@ export default function AccountVerification() {
     }
   };
 
+  const handleChange = () => {
+    console.log("first");
+  };
+
   return (
     <div className="mx-auto p-4 shadow-sm">
       <h3 className="text-2xl font-bold text-center mb-4 bg-primary text-white rounded py-2">
         New Professionals Account Management
       </h3>
       <div className="flex justify-between mb-4">
-        <select className="border p-2 rounded-md">
+        <select onChange={handleChange} className="border p-2 rounded-md">
           <option value="February 2025">February 2025</option>
           <option value="March 2025">March 2025</option>
         </select>
