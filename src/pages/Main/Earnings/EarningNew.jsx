@@ -1,7 +1,7 @@
-import { InfoCircleOutlined } from "@ant-design/icons";
-import { Button, Select, Table } from "antd";
+import { Modal, Select, Table } from "antd";
 import "antd/dist/reset.css";
 import { useState } from "react";
+import { BsInfoCircleFill } from "react-icons/bs";
 import imageOne from "../../../assets/images/earning_one.svg";
 import imageTwo from "../../../assets/images/earning_two.svg";
 
@@ -13,6 +13,22 @@ const premiumPlans = ["Premium", "Standard", "Trial"];
 export default function EarningNew() {
   const [clientFilter, setClientFilter] = useState(undefined);
   const [planFilter, setPlanFilter] = useState(undefined);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedClient, setSelectedClient] = useState(null);
+
+  const showModal = (record) => {
+    setSelectedClient(record);
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
 
   const data = Array.from({ length: 7 }).map((_, i) => ({
     key: i,
@@ -94,8 +110,12 @@ export default function EarningNew() {
       title: "Action",
       key: "action",
       align: "center",
-      render: () => (
-        <Button type="text" icon={<InfoCircleOutlined />} size="small" />
+      render: (_, record) => (
+        <div>
+          <button onClick={() => showModal(record)} className="">
+            <BsInfoCircleFill size={20} />
+          </button>
+        </div>
       ),
     },
   ];
@@ -133,6 +153,55 @@ export default function EarningNew() {
             rowClassName="even:bg-gray-50"
             className="ant-table-bordered"
           />
+
+          <Modal
+            title={
+              <span className="text-xl text-primary font-bold">
+                Earning's Details
+              </span>
+            }
+            open={isModalOpen}
+            onOk={handleOk}
+            onCancel={handleCancel}
+            centered
+            footer={[
+              <div className="flex justify-center">
+                <button
+                  key="ok"
+                  type="primary"
+                  onClick={handleOk}
+                  className="bg-primary text-white rounded-full  px-20 py-2 mt-4"
+                >
+                  OK
+                </button>
+              </div>,
+            ]}
+          >
+            {selectedClient && (
+              <div className="space-y-4 mt-4">
+                <div className=" flex justify-between items-center border-b-2 px-2 ">
+                  <p className="font-semibold">Client Name</p>
+                  <p>{selectedClient.userClient}</p>
+                </div>
+                <div className=" flex justify-between items-center border-b-2 px-2 ">
+                  <p className="font-semibold">Client Email</p>
+                  <p>{selectedClient.email}</p>
+                </div>
+                <div className=" flex justify-between items-center border-b-2 px-2 ">
+                  <p className="font-semibold">Subscription Type</p>
+                  <p>{selectedClient.premiumPlan}</p>
+                </div>
+                <div className=" flex justify-between items-center border-b-2 px-2 ">
+                  <p className="font-semibold">Amount</p>
+                  <p>{selectedClient.amount}</p>
+                </div>
+                <div className=" flex justify-between items-center border-b-2 px-2 ">
+                  <p className="font-semibold">Date</p>
+                  <p>{selectedClient.date}</p>
+                </div>
+              </div>
+            )}
+          </Modal>
         </div>
       </div>
     </div>
