@@ -7,8 +7,8 @@ import imageTwo from "../../../assets/images/earning_two.svg";
 
 const { Option } = Select;
 
-const userClients = ["Mu - Mu Group", "Alpha Co.", "Beta LLC"];
-const premiumPlans = ["Premium", "Standard", "Trial"];
+const userClients = ["User", "Professional"];
+const premiumPlans = ["Premium Plan", "Free Plan"];
 
 export default function EarningNew() {
   const [clientFilter, setClientFilter] = useState(undefined);
@@ -180,11 +180,11 @@ export default function EarningNew() {
             {selectedClient && (
               <div className="space-y-4 mt-4">
                 <div className=" flex justify-between items-center border-b-2 px-2 ">
-                  <p className="font-semibold">Client Name</p>
+                  <p className="font-semibold">Name</p>
                   <p>{selectedClient.userClient}</p>
                 </div>
                 <div className=" flex justify-between items-center border-b-2 px-2 ">
-                  <p className="font-semibold">Client Email</p>
+                  <p className="font-semibold">Email</p>
                   <p>{selectedClient.email}</p>
                 </div>
                 <div className=" flex justify-between items-center border-b-2 px-2 ">
