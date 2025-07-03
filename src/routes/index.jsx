@@ -32,9 +32,9 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <AdminRoutes>
-        <Main />
-      </AdminRoutes>
+      // <AdminRoutes>
+      // </AdminRoutes>
+      <Main />
     ),
     children: routesGenerators(dashboardItems),
   },
