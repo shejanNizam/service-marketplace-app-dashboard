@@ -12,7 +12,7 @@ import CategoryNew from "../pages/Main/Category/CategoryNew";
 import DashboardHome from "../pages/Main/DashboardHome/DashboardHome";
 import EarningNew from "../pages/Main/Earnings/EarningNew";
 import Notifications from "../pages/Main/Notifications/Notifications";
-import Subscription from "../pages/Main/Subscription/Subscription";
+import TabSubscription from "../pages/Main/Subscription/TabSubscription";
 import Support from "../pages/Main/Support/Support";
 import EditMyProfile from "../pages/Profile/EditMyProfile";
 import MyProfile from "../pages/Profile/MyProfile";
@@ -83,7 +83,7 @@ export const dashboardItems = [
     name: "Subscription",
     path: "subscription",
     icon: PiUsersThree,
-    element: <Subscription />,
+    element: <TabSubscription />,
   },
   {
     name: "Support",
