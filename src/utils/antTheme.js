@@ -32,7 +32,7 @@ export const mainTheme = {
       controlHeightLG: 56,
       colorBorder: "#00321F",
       borderRadiusLG: "16px",
-      colorTextPlaceholder: "#00321F",
+      colorTextPlaceholder: "#c9c6c5",
     },
     Table: {
       colorText: "#000000",
