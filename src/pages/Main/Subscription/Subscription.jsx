@@ -160,7 +160,7 @@ export default function Subscription({ type }) {
                   <div className="mt-6 pt-4 border-t border-gray-200">
                     <button
                       onClick={() => handleEditPlan(plan)}
-                      className="bg-red-600 hover:bg-red-700 text-white font-semibold w-full py-2 rounded"
+                      className="bg-primary hover:bg-primary/80 text-white font-semibold w-full py-2 rounded-full"
                     >
                       Edit
                     </button>
