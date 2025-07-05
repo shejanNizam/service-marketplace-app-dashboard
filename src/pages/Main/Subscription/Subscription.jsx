@@ -226,7 +226,7 @@ export default function Subscription({ type }) {
             </div>
           ) : (
             <>
-              {plans.map((plan, index) => (
+              {plans?.map((plan, index) => (
                 <div
                   key={index}
                   className="border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
@@ -271,12 +271,17 @@ export default function Subscription({ type }) {
       </div>
 
       <Modal
-        title={modalType === "create" ? "Create Plan" : "Edit Plan"}
+        title={
+          modalType === "create" ? (
+            <span className="text-xl text-primary font-bold">Create Plan</span>
+          ) : (
+            <span className="text-xl text-primary font-bold"> Edit Plan </span>
+          )
+        }
         open={isModalOpen}
         onCancel={handleCancel}
         footer={null}
-        width={650}
-        destroyOnClose
+        width={500}
       >
         <Form
           form={form}
@@ -292,10 +297,9 @@ export default function Subscription({ type }) {
                 { required: true, message: "Please select service type" },
               ]}
             >
-              <Select placeholder="Select service type" size="large">
-                <Option value="Basic Plan">Basic Plan</Option>
-                <Option value="Premium Plan">Premium Plan</Option>
-                <Option value="Enterprise Plan">Enterprise Plan</Option>
+              <Select placeholder="Select Client/Professional" size="large">
+                <Option value="Basic Plan">Client</Option>
+                <Option value="Premium Plan">Professional</Option>
               </Select>
             </Form.Item>
 
@@ -307,8 +311,6 @@ export default function Subscription({ type }) {
               <Select placeholder="Select plan name" size="large">
                 <Option value="Basic Plan">Basic Plan</Option>
                 <Option value="Premium Plan">Premium Plan</Option>
-                <Option value="Enterprise Plan">Enterprise Plan</Option>
-                <Option value="Professional">Professional</Option>
               </Select>
             </Form.Item>
           </div>
@@ -319,7 +321,7 @@ export default function Subscription({ type }) {
               label="Plan Price"
               rules={[{ required: true, message: "Please enter plan price" }]}
             >
-              <Input placeholder="€ 20" prefix="€" type="number" size="large" />
+              <Input placeholder="20" prefix="€" type="number" size="large" />
             </Form.Item>
 
             <Form.Item
@@ -331,18 +333,18 @@ export default function Subscription({ type }) {
                 <Option value="1 Month">1 Month</Option>
                 <Option value="3 Months">3 Months</Option>
                 <Option value="6 Months">6 Months</Option>
-                <Option value="1 Year">1 Year</Option>
+                <Option value="1 Year">1 Year+</Option>
               </Select>
             </Form.Item>
           </div>
 
           <div className="mt-6">
             <h3 className="text-lg font-semibold mb-4">Facilities</h3>
-            <div className="space-y-3">
+            <div className="px-4">
               {facilities.map((facility) => (
                 <div
                   key={facility.key}
-                  className="flex items-center justify-between p-3 bg-gray-50 rounded-lg"
+                  className="flex items-center justify-between"
                 >
                   <span className="text-sm text-gray-700 flex-1">
                     {facility.label}
@@ -359,7 +361,7 @@ export default function Subscription({ type }) {
             </div>
           </div>
 
-          <div className="mt-8 flex justify-end">
+          <div className="mt-8 flex justify-center">
             <Button
               type="primary"
               htmlType="submit"
