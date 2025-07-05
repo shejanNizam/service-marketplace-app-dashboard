@@ -136,15 +136,11 @@ export default function Subscription({ type }) {
   ];
 
   const facilities = [
-    { key: "view_profiles", label: "View professional profiles" },
-    { key: "appointment_booking", label: "Immediate appointment booking" },
-    { key: "email_contact", label: "Email-based contact" },
     { key: "submit_projects", label: "Submit up to 2 projects/month" },
     { key: "project_extras", label: "£3.59/project for extras" },
     { key: "unlimited_favorites", label: "Unlimited favorites (unorganized)" },
     { key: "messaging", label: "Watch messaging with professionals" },
     { key: "manage_projects", label: "Create & manage projects" },
-    { key: "unlimited_functions", label: "Unlimited negotiated functions" },
   ];
 
   const handleCreatePlan = () => {
