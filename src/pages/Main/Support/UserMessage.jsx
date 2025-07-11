@@ -272,6 +272,11 @@ export default function UserMessage() {
                   <h3 className="font-semibold text-gray-900 group-hover:text-primary">
                     {user.name}
                   </h3>
+                  {user.unreadCount > 0 && (
+                    <div className="bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center font-medium">
+                      {user.unreadCount}
+                    </div>
+                  )}
                 </div>
                 <p className="text-sm text-gray-500 truncate group-hover:text-gray-600">
                   {user.lastMessage}
