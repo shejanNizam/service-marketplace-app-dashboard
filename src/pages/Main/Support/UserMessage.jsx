@@ -376,7 +376,7 @@ export default function UserMessage() {
         ) : (
           <div className="flex-1 flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100">
             <div className="text-center p-8 bg-white/60 backdrop-blur-sm rounded-2xl shadow-lg">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-20 h-20 bg-gradient-to-r from-primary to-primary/90 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Send className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">

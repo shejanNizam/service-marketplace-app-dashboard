@@ -299,40 +299,18 @@ export default function Report() {
                 </div>
               </div>
             </div>
-
-            {/* Message Input */}
-            <div className="bg-white/90 backdrop-blur-sm border-t border-gray-200/50 p-4 shadow-lg">
-              <div className="flex items-center space-x-3">
-                <input
-                  type="text"
-                  value={newMessage}
-                  onChange={(e) => setNewMessage(e.target.value)}
-                  onKeyPress={handleKeyPress}
-                  placeholder="Type your message..."
-                  className="flex-1 px-4 py-3 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                />
-                <button
-                  onClick={handleSendMessage}
-                  className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-3 rounded-full hover:from-blue-600 hover:to-indigo-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-110"
-                >
-                  <Send className="w-5 h-5" />
-                </button>
-              </div>
-            </div>
           </>
         ) : (
           <div className="flex-1 flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100">
             <div className="text-center p-8 bg-white/60 backdrop-blur-sm rounded-2xl shadow-lg">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-20 h-20 bg-gradient-to-r from-primary to-primary/90 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Send className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                Welcome to Messages
+                Welcome to Report List
               </h3>
               <p className="text-gray-600 max-w-md">
-                Select a conversation from the sidebar to start messaging with
-                your users. Manage all your customer communications in one
-                place.
+                Select a conversation from the sidebar to see report issue.
               </p>
             </div>
           </div>
