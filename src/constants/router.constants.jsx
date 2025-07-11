@@ -13,7 +13,9 @@ import DashboardHome from "../pages/Main/DashboardHome/DashboardHome";
 import EarningNew from "../pages/Main/Earnings/EarningNew";
 import Notifications from "../pages/Main/Notifications/Notifications";
 import TabSubscription from "../pages/Main/Subscription/TabSubscription";
-import Support from "../pages/Main/Support/Support";
+import ProfessionalMessage from "../pages/Main/Support/ProfessionalMessage";
+import Report from "../pages/Main/Support/Report";
+import UserMessage from "../pages/Main/Support/UserMessage";
 import EditMyProfile from "../pages/Profile/EditMyProfile";
 import MyProfile from "../pages/Profile/MyProfile";
 import About from "../pages/Settings/About";
@@ -87,11 +89,29 @@ export const dashboardItems = [
   },
   {
     name: "Support",
-    path: "support",
+    rootPath: "support",
     icon: PiUsersThree,
-    element: <Support />,
+    children: [
+      {
+        name: "User Message",
+        path: "support/user-message",
+        icon: CiUser,
+        element: <UserMessage />,
+      },
+      {
+        name: "Prof. Message",
+        path: "support/professional-message",
+        icon: CiUser,
+        element: <ProfessionalMessage />,
+      },
+      {
+        name: "Report",
+        path: "support/report",
+        icon: CiUser,
+        element: <Report />,
+      },
+    ],
   },
-
   {
     name: "Settings",
     rootPath: "settings",
