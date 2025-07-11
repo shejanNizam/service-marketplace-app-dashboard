@@ -183,7 +183,7 @@ export default function Subscription({ type }) {
         open={isModalOpen}
         onCancel={handleCancel}
         footer={null}
-        width={500}
+        width={450}
       >
         <Form
           form={form}
