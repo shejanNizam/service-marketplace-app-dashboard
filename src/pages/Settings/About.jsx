@@ -24,11 +24,13 @@ const About = () => {
               <Spin size="large" />
             </div>
           ) : (
-            <div
-              className="no-tailwind"
-              // dangerouslySetInnerHTML={{ __html: data?.data?.description }}
-              dangerouslySetInnerHTML={{ __html: data?.data[0]?.description }}
-            />
+            // <div
+            //   className="no-tailwind"
+            //   // dangerouslySetInnerHTML={{ __html: data?.data?.description }}
+            //   dangerouslySetInnerHTML={{ __html: data?.data[0]?.description }}
+            // />
+
+            <h3> Static about us </h3>
           )}
           {/* <h3> Static About Us </h3> */}
         </div>

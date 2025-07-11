@@ -24,11 +24,12 @@ const PrivacyPolicy = () => {
               <Spin size="large" />
             </div>
           ) : (
-            <div
-              className="no-tailwind"
-              // dangerouslySetInnerHTML={{ __html: data?.data?.description }}
-              dangerouslySetInnerHTML={{ __html: data?.data[0]?.description }}
-            />
+            // <div
+            //   className="no-tailwind"
+            //   // dangerouslySetInnerHTML={{ __html: data?.data?.description }}
+            //   dangerouslySetInnerHTML={{ __html: data?.data[0]?.description }}
+            // />
+            <h3>Static privacy policy</h3>
           )}
           {/* <h3> Static Privacy Policy </h3> */}
         </div>

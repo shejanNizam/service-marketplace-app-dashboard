@@ -25,11 +25,12 @@ const TermsConditions = () => {
                 <Spin size="large" />
               </div>
             ) : (
-              <div
-                className="no-tailwind"
-                // dangerouslySetInnerHTML={{ __html: data?.data?.description }}
-                dangerouslySetInnerHTML={{ __html: data?.data[0]?.description }}
-              />
+              // <div
+              //   className="no-tailwind"
+              //   // dangerouslySetInnerHTML={{ __html: data?.data?.description }}
+              //   dangerouslySetInnerHTML={{ __html: data?.data[0]?.description }}
+              // />
+              <h3>Static terms & coonditions</h3>
             )}
             {/* <h3> Static Terms & Condition </h3> */}
           </div>
