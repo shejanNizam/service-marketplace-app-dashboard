@@ -136,7 +136,7 @@ const Sidebar = () => {
             onClick={handleLogOut}
             className="bg-white text-primary w-full px-10 py-4 flex justify-center items-center gap-2 rounded-lg text-xl"
           >
-            <BiLogOut className="text-white" size={20} />
+            <BiLogOut className="" size={20} />
             <span>Logout</span>
           </button>
         </div>
